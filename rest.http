@@ -1,0 +1,94 @@
+### User signup endpoint 
+POST http://localhost:8000/api/v1/users/  HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "zarita",
+    "email": "zaita@gmail.com",
+    "country": "france",
+    "phone": "0666402256",
+    "password": "123456729989",
+    "type":"assistantFr"
+}
+
+### User signup endpoint 
+POST http://localhost:8000/api/v1/users/login  HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "zarxxita@gmail.com",
+    "password": "123456729989"
+}
+
+
+### get user profile 
+GET  http://localhost:8000/api/v1/users/  HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inphcnh4aXRhQGdtYWlsLmNvbSIsImlhdCI6MTY1NDQyNjU0MCwiZXhwIjoxNjU0NTEyOTQwfQ.o5LnTjp2ygD3blOOduZraPwSH3Lax-B_Z9ux-wiucq0
+
+
+### User signup endpoint 
+POST http://localhost:8000/api/v1/tickets/  HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "zarita",
+    "email": "zarxxita@gmail.com",
+    "country": "france",
+    "phone": "0666402256",
+    "password": "123456729989",    
+}
+
+###------------------------------------------------------------
+
+### Open new ticket
+POST http://localhost:8000/api/v1/tickets/ HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0MzQ3NzQ3LCJleHAiOjE2NTQ0MzQxNDd9.SxqK-5QLby79PIqLV7tBOI6PtqW5sRWHsTSmPS8IN7w
+Content-Type: application/json 
+
+{
+ "subject": "do this and that ",
+  "description": "we need oy to develop an application which will alow our managers to contact bla ba bla ",
+  "deadline": "2022-06-01" 
+}
+
+###Get all the tickets
+GET http://localhost:8000/api/v1/tickets/ HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0MzQ3NzQ3LCJleHAiOjE2NTQ0MzQxNDd9.SxqK-5QLby79PIqLV7tBOI6PtqW5sRWHsTSmPS8IN7w
+
+###Get only new tickets
+GET http://localhost:8000/api/v1/tickets/newTickets HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inphcnh4aXRhQGdtYWlsLmNvbSIsImlhdCI6MTY1NDQzMzI1MCwiZXhwIjoxNjU0NTE5NjUwfQ.y-nQa3nXKyAGfzpREy7EsvY9iLyNG5DEgki1AeBY7ZI
+
+###Get only encours tickets
+GET http://localhost:8000/api/v1/tickets/encours HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inphcnh4aXRhQGdtYWlsLmNvbSIsImlhdCI6MTY1NDQzNzU2NCwiZXhwIjoxNjU0NTIzOTY0fQ.7b6ruxhPMXXmSgE3D_LKJKgx18Qdjn42wArqmkTsHec
+
+### Get single ticket
+GET http://localhost:8000/api/v1/tickets/singleTicket HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0NDU0MDEzLCJleHAiOjE2NTQ1NDA0MTN9.eisutW-NFmtL5NDPMVo4fozw9Rl2TLQWOBxVtTImnfM
+
+### Get all the tickets for a specific user
+GET http://localhost:8000/api/v1/tickets/user HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inphcnh4aXRhQGdtYWlsLmNvbSIsImlhdCI6MTY1NDQzNzU2NCwiZXhwIjoxNjU0NTIzOTY0fQ.7b6ruxhPMXXmSgE3D_LKJKgx18Qdjn42wArqmkTsHec
+
+### Reply message to the ticket
+PUT http://localhost:8000/api/v1/tickets/6299c99b462249e09e572f69 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0MjQ1NzU3LCJleHAiOjE2NTQzMzIxNTd9.VR4NP3OtQmgVbJzpLo9T3brIa_lIdTj_4lsvWReFSB0
+Content-Type: application/json 
+
+{ 
+    "message": "this is the 222 reply", 
+    "sender": "Prem" 
+}
+
+### Close the ticket
+PATCH  http://localhost:8000/api/v1/tickets/close-ticket/6299c99b462249e09e572f69 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0MjQ1NzU3LCJleHAiOjE2NTQzMzIxNTd9.VR4NP3OtQmgVbJzpLo9T3brIa_lIdTj_4lsvWReFSB0
+
+### Delete the ticket
+DELETE   http://localhost:8000/api/v1/tickets/6299c99b462249e09e572f69 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtAZ21haWwuY29tIiwiaWF0IjoxNjU0MjQ1NzU3LCJleHAiOjE2NTQzMzIxNTd9.VR4NP3OtQmgVbJzpLo9T3brIa_lIdTj_4lsvWReFSB0
+
+
+
+
